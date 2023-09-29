@@ -11,35 +11,23 @@ public class main {
         cliente jefferson = new cliente("Jefferson Sousa", "518166819", "11/05/1999");
         gerente wellington = new gerente("Wellington Nem", "892925789", "11/08/1985");
 
-        ContaCorrente conta1 = new ContaCorrente(italo, wellington);
-        ContaPoupanca conta2 = new ContaPoupanca(jefferson, wellington);
+        ContaCorrente conta1 = new ContaCorrente(italo, 1000);
+        ContaPoupanca conta2 = new ContaPoupanca(jefferson, 4000);
 
-        conta1.depositar(1000);
+        conta1.exibirInfos();
+        conta1.depositar(100);
+        conta1.exibirInfos();
+        conta1.depositar(400);
+        conta1.exibirInfos();
         conta1.sacar(200);
-        conta1.exibirInfosCC();
-        System.out.println("===========");
+        conta1.exibirInfos();
 
-        conta2.depositar(5000);
-        conta2.sacar(500);
-        conta2.exibirInfosPoupanca();
-        System.out.println("===========");
-
-        italo.exibirInfosUsuarios();
-        System.out.println("===========");
-        jefferson.exibirInfosUsuarios();
-        System.out.println("===========");
-        wellington.exibirInfosUsuarios();
-        System.out.println("===========");
-
-        wellington.oferecerInvestimento(jefferson);
-        System.out.println("===========");
-
-        conta1.usarCredito(200);
-        conta1.exibirInfosCC();
-        System.out.println("===========");
-
+        
+        
         conta2.guardarDinheiro(1000);
-        conta2.exibirInfosPoupanca();
+        conta2.exibirInfos();
+        conta2.aplicarJuros(1);
+        conta2.exibirInfos();
     
 
     }

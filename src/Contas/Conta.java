@@ -2,21 +2,21 @@ package Contas;
 import Usuarios.cliente;
 import Usuarios.gerente;
 
-public abstract class Conta {
+public class Conta {
     private static String AGENCIA_PADRAO = "1";
     private static int numeroSequencial = 1;
 
-    protected int numero;
-    protected String agencia;
+    private int numero;
+    private String agencia;
     protected double saldo;
-    protected cliente cliente;
-    protected gerente gerente;
+    private cliente cliente;
+    private gerente gerente;
 
-    public Conta (cliente cliente, gerente gerente) {
+    public Conta (cliente cliente, double saldo) {
         this.numero = numeroSequencial++;
         this.agencia = Conta.AGENCIA_PADRAO;
         this.cliente = cliente;
-        this.gerente = gerente;
+        this.saldo = saldo;
     }
 
     public void sacar(double valor) {
@@ -32,6 +32,7 @@ public abstract class Conta {
         System.out.println("Saldo: " + this.saldo);
         System.out.println("Numero: " + this.numero);
         System.out.println("Agencia: " + this.agencia);
+        System.out.println("===========");
     }
 
     public String getAgencia() {
@@ -44,5 +45,21 @@ public abstract class Conta {
 
     public double getSaldo() {
         return saldo;
+    }
+
+    public gerente getGerente() {
+        return gerente;
+    }
+
+    public void setGerente(gerente gerente) {
+        this.gerente = gerente;
+    }
+
+    public cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(cliente cliente) {
+        this.cliente = cliente;
     }
 }
