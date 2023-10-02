@@ -1,6 +1,6 @@
 package Contas;
 import Usuarios.cliente;
-import Usuarios.gerente;
+
 
 public class ContaPoupanca extends Conta {
     private double dinheiroGuardado;
@@ -14,8 +14,9 @@ public class ContaPoupanca extends Conta {
         this.dinheiroGuardado = this.dinheiroGuardado + valor;
     }
 
-    public void aplicarJuros(int qtdMeses) {
-        this.dinheiroGuardado = this.getDinheiroGuardado() +((this.dinheiroGuardado * 0.05) * qtdMeses);
+    public void aplicarJuros() {
+        this.saldo *=  1.005;
+        this.dinheiroGuardado *= 1.01;
     }
 
     public void exibirInfos() {
