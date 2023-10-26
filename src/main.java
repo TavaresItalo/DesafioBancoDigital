@@ -5,8 +5,9 @@ import Contas.ContaCorrente;
 import Contas.ContaPoupanca;
 import Contas.ContaTesouroDireto;
 
+
 public class main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         
         cliente italo = new cliente("Ítalo Tavares", "000025163", "09/04/2001");
         cliente jefferson = new cliente("Jefferson Sousa", "518166819", "11/05/1999");
@@ -17,11 +18,11 @@ public class main {
 
        conta1.exibirInfos();
        conta1.depositar(100);
-       conta1.exibirInfos();
+       System.out.println(conta1.getSaldo());
        conta1.depositar(400);
-       conta1.exibirInfos();
-       conta1.sacar(200);
-       conta1.exibirInfos();
+       System.out.println(conta1.getSaldo());
+       conta1.sacar(2000);
+       System.out.println(conta1.getSaldo());
 
         
         

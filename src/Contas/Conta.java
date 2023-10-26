@@ -19,8 +19,12 @@ public class Conta {
         this.saldo = saldo;
     }
 
-    public void sacar(double valor) {
+    public void sacar(double valor) throws SaldoInsuficienteException {
         this.saldo = saldo - valor;
+
+        if(valor > this.saldo) {
+            throw new SaldoInsuficienteException("Você não possui saldo suficiente.");
+        }
     }
 
     public void depositar(double valor) {
